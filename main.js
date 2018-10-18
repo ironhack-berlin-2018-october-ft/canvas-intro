@@ -16,7 +16,7 @@ function drawPacman(x,y,radius,color="black"){
 function drawGrid(size){
   ctx.fillStyle = "red"
   ctx.strokeStyle = "red"
-  ctx.globalAlpha = 0.5
+  ctx.globalAlpha = 1
   var fontSize = (5+0.3*size)
   ctx.font = fontSize+"px sans-serif"
   for (var y = size; y < canvas.height; y+= size)  {
@@ -45,6 +45,13 @@ ctx.fillText("Pacman", 50, 20)
 for (var y = 40; y <= 180; y+= 20) {
   drawPacman(50, y, 8, "rgb("+(y+20)+",0,0)")
 }
+
+var img = new Image();
+img.src = 'images/berlin.jpeg'
+img.onload = function() {
+  ctx.drawImage(img, 400, 600,400,400/300*168);
+}
+
 
 drawGrid(200)
 
